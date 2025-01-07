@@ -154,7 +154,9 @@ def get_flight_phase(
     temp_df["timestamp"] = flight_df.index.get_level_values(1)
     temp_df.index = flight_df.index
     # timestamp = flight_df.index.get_level_values(1)
-    temp_df["vertical speed"] = flight_df[alt_name].diff() / temp_df["timestamp"].diff()
+    temp_df["vertical speed"] = (
+        flight_df[alt_name].diff() / temp_df["timestamp"].diff().dt.total_seconds()
+    )
     temp_df["flaps"] = flight_df[flaps_name]
     temp_df["roll angle"] = flight_df[roll_angle_name]
     temp_df.index = flight_df.index
