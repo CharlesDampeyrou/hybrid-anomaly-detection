@@ -1,0 +1,16 @@
+cx_param_dim: 6
+cy_param_dim: 3
+cz_param_dim: 6
+equation_params:
+  air_molar_mass: 0.029
+  gas_constant: 8.314
+  wing_surface: 21.5
+lr: 1.0e-05
+net_coef_dict:
+  cx_net_coef: 0.01
+  cy_net_coef: 0.001
+  cz_net_coef: 0.1
+  trust_net_coef: 1000.0
+regressor_layer_dim: 64
+regressor_layers: 3
+thrust_param_dim: 3
